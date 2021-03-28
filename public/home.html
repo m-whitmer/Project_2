@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,155 +11,162 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <title>Shoe-ing Online</title>
 </head>
+
 <body>
     <!-- Navbar goes here -->
     <nav class="navbar-expand-lg navbar navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png"alt="logo" width="60px" height="55px"> Shoe-ing 
-        </a>
-        <button type="button" class="btn btn-primary"> home </button>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png" alt="logo" width="60px" height="55px"> Shoe-ing
+            </a>
+            <button type="button" class="btn btn-primary"> home </button>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Concact</a>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Concact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <div class="container-fluid">
-      <div class="row">
-        <section class="col-2 category">
-        <p>
-          Brand<hr>
-          <button type="button" class="btn btn-light btn-sm">NIKE</button>
-          <button type="button" class="btn btn-light btn-sm">Adidas</button>
-          <button type="button" class="btn btn-light btn-sm">Vans</button>
-          <button type="button" class="btn btn-light btn-sm">Converse</button>
-          <br><br>Style<hr>
-          <button type="button" class="btn btn-light btn-sm">Run</button>
-          <button type="button" class="btn btn-light btn-sm">Tennis</button>
-          <button type="button" class="btn btn-light btn-sm">Sneaker</button>
-          <button type="button" class="btn btn-light btn-sm">Basketbal</button>
-          <br><br>Size<hr>
-          <button type="button" class="btn btn-light btn-sm">7-</button>
-          <button type="button" class="btn btn-light btn-sm">7-9</button>
-          <button type="button" class="btn btn-light btn-sm">10-12</button>
-          <button type="button" class="btn btn-light btn-sm">12-14</button>
-          <button type="button" class="btn btn-light btn-sm">15+</button>
-          <br><br>Gender<hr>
-          <button type="button" class="btn btn-light btn-sm">Men</button>
-          <button type="button" class="btn btn-light btn-sm">Women</button>
-          <button type="button" class="btn btn-light btn-sm">Kids</button>
-          <br><br>Material<hr>
-          <button type="button" class="btn btn-light btn-sm">Leather</button>
-          <button type="button" class="btn btn-light btn-sm">Cloth</button>
-          <button type="button" class="btn btn-light btn-sm">PU</button>
+        <div class="row">
+            <section class="col-2 category">
+                <p>
+                    Brand
+                    <hr>
+                    <button type="button" class="btn btn-light btn-sm">NIKE</button>
+                    <button type="button" class="btn btn-light btn-sm">Adidas</button>
+                    <button type="button" class="btn btn-light btn-sm">Vans</button>
+                    <button type="button" class="btn btn-light btn-sm">Converse</button>
+                    <br><br>Style
+                    <hr>
+                    <button type="button" class="btn btn-light btn-sm">Run</button>
+                    <button type="button" class="btn btn-light btn-sm">Tennis</button>
+                    <button type="button" class="btn btn-light btn-sm">Sneaker</button>
+                    <button type="button" class="btn btn-light btn-sm">Basketbal</button>
+                    <br><br>Size
+                    <hr>
+                    <button type="button" class="btn btn-light btn-sm">7-</button>
+                    <button type="button" class="btn btn-light btn-sm">7-9</button>
+                    <button type="button" class="btn btn-light btn-sm">10-12</button>
+                    <button type="button" class="btn btn-light btn-sm">12-14</button>
+                    <button type="button" class="btn btn-light btn-sm">15+</button>
+                    <br><br>Gender
+                    <hr>
+                    <button type="button" class="btn btn-light btn-sm">Men</button>
+                    <button type="button" class="btn btn-light btn-sm">Women</button>
+                    <button type="button" class="btn btn-light btn-sm">Kids</button>
+                    <br><br>Material
+                    <hr>
+                    <button type="button" class="btn btn-light btn-sm">Leather</button>
+                    <button type="button" class="btn btn-light btn-sm">Cloth</button>
+                    <button type="button" class="btn btn-light btn-sm">PU</button>
 
-        </p>
-        </section>
+                </p>
+            </section>
 
-        <main class="col-10 pictures">
-          <div class="row" id="show">
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Price: 130$ </p>
-                <a href="#" class="btn btn-primary btn-sm">Add to cart</a>
-              </div>
-            </div>
-            
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+            <main class="col-10 pictures">
+                <div class="row" id="show">
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Price: 130$ </p>
+                            <a href="#" class="btn btn-primary btn-sm">Add to cart</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-            <div class="card" style="width: 14rem;">
-              <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Shoe name</h5>
-                <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
 
-          </div>
-          <!-- <div class="row">
+                    <div class="card" style="width: 14rem;">
+                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe name</h5>
+                            <p class="card-text">Brand..Size...Stock...Purchase...Add in cart</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="row">
 
           </div>
           <div class="row">
             
           </div>-->
-        </main>
+            </main>
 
 
-      </div>
-    </div>   
-    
-            
+        </div>
+    </div>
+    <script src="/assets/js/index.js"></script>
+
 </body>
+
 </html>
