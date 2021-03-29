@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require("sequelize");
 const { Category, Product } = require('../../models');
 
 router.get('/', async(req, res) => {
@@ -41,7 +42,22 @@ router.post('/', async(req, res) => {
     }
 });
 
-router.post('/search', async(req, res) => {});
+router.post('/search', async(req, res) => {
+    try {
+        let result = await Product.findAll({
+            where: {
+                product_name: {
+                    [Op.substring]: `%${req.query.search}%`
+                }
+            }
+        })
+
+        res.status(200).json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    }
+});
 
 router.delete('/:id', async(req, res) => {
     try {
