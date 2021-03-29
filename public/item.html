@@ -17,10 +17,10 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png"alt="logo" width="60px" height="55px"> Shoe-ing 
         </a>
-        <button type="button" class="btn btn-primary"> home </button>
+        <button type="button" id="navHome" class="btn btn-primary"> home </button>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          <button id="navSearch" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,13 +28,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
+              <a id="navCart" class="nav-link active" aria-current="page" href="contact.html">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Login</a>
+              <a id="navLogin" class="nav-link" href="portfolio.html">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Concact</a>
+              <a id="navContact" class="nav-link" href="index.html">Concact</a>
             </li>
           </ul>
         </div>
@@ -43,24 +43,23 @@
     <!--  main body -->
     <main class="container">
         <div class="row">
-            <div class="col-2" style="overflow: scroll; height: 450px;">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
+            <div id="sideImg" class="col-2" style="overflow: scroll; height: 450px;">
+                <img id="img1" src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
+                <img id="img2" src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
+                <img id="img3" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
+                <img id="img4" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
+                <img id="img5" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
+                <img id="img6" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
 
             </div>
             <div class="col-sm-6 col-xs-12">
-                <img class="img-responsive img-fluid" src="./assets/img/cart.jpg" alt="itempic">
+                <img id="imgBig" class="img-responsive img-fluid" src="./assets/img/cart.jpg" alt="itempic">
 
             </div>
             <div class="col3">
-                <h1>Name of the product</h1>
-                <h6>Stock :</h6><hr>
-                <h6>Color:</h6><hr>
-                <h6>Size:</h6><hr>
+                <h1 id="itemNmae" >Name of the product</h1>
+                <h6 id="itemStock" >Stock :</h6><hr>
+                <!-- <h6>Size:</h6><hr>
                 <button type="button" class="btn btn-light">7</button>
                 <button type="button" class="btn btn-light">8</button>
                 <button type="button" class="btn btn-light">9</button>
@@ -71,14 +70,13 @@
                 <button type="button" class="btn btn-light">14</button>
                 <button type="button" class="btn btn-light">15</button>
                 <button type="button" class="btn btn-light">16</button><hr>
-                <button type="button" class="btn btn-primary">Add to cart</button>
+                <button type="button" class="btn btn-primary">Add to cart</button> -->
             </div>   
         </div><hr>
-        <p>
-            Description:
-            Details:
-            Review:
-        </p>
+        <p id="itemDescription" >Description:</p>
+        <p id="itemDetail">Details:</p>
+        <p id="itemReview" >Review:</p>
+        
     </main>
     
     
