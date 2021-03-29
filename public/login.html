@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,34 +14,35 @@
 
     <title>Shoe-ing Online</title>
 </head>
+
 <body>
     <!-- Navbar goes here -->
     <nav class="navbar-expand-lg navbar navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png"alt="logo" width="60px" height="55px"> Shoe-ing 
-        </a>
-        <button type="button" class="btn btn-primary"> home </button>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png" alt="logo" width="60px" height="55px"> Shoe-ing
+            </a>
+            <button type="button" class="btn btn-primary"> home </button>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Concact</a>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Concact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <!-- Main body  -->
     <main>
@@ -56,19 +58,19 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="userform">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="username">
-                                
+                                <input id="name" type="text" class="form-control" placeholder="username">
+
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="password">
+                                <input id="password" type="password" class="form-control" placeholder="password">
                             </div>
                             <div class="row align-items-center remember">
                                 <input type="checkbox">Remember Me
@@ -90,6 +92,7 @@
             </div>
         </div>
     </main>
-            
+    <script src="/assets/js/login.js"></script>
 </body>
+
 </html>
