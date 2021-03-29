@@ -5,7 +5,7 @@ let renderShoes = shoes => {
         let newCardInfo = $('<div>').addClass('card-body');
         let newCardTitle = $('<h5>').addClass('card-title').text(shoe.product_name);
         let newCardDesc = $('<p>').addClass('card-text').text(`price: $ ${shoe.price} stock: ${shoe.stock}`);
-        let newBtn = $('<a>').addClass('btn btn-primary btn-sm shoeBtn').text('Add to Cart');
+        let newBtn = $('<a>').addClass('btn btn-primary btn-sm shoeBtn').text('Add to Cart').attr('data-id', shoe.id);
 
         newCardInfo.append(newCardTitle);
         newCardInfo.append(newCardDesc);
@@ -41,6 +41,18 @@ let getAllShoes = () => {
 }
 
 
+let addToCart = id => {
+    let newProd = {
+        id,
+        quantity: 1
+    }
+    axios.post('/api/carts', newProd).then(res => {
+        console.log(res);
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
 $(document).ready(() => {
 
     $('form').submit(function(e) {
@@ -51,6 +63,11 @@ $(document).ready(() => {
 
     $(document).on('click', '.card', function() {
         console.log($(this).attr('data-id'));
+    })
+
+    $(document).on('click', '.shoeBtn', function() {
+        let id = $(this).attr('data-id')
+        addToCart(id);
     })
 
     getAllShoes();
