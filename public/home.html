@@ -18,24 +18,24 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png" alt="logo" width="60px" height="55px"> Shoe-ing
             </a>
-            <button type="button" class="btn btn-primary"> home </button>
+            <button id="navHome" type="button" class="btn btn-primary"> home </button>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                <input id="navInput"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="navSearch"  class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="navBtns" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Cart</a>
+                        <a id="navCart" class="nav-link active" aria-current="page" href="contact.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Login</a>
+                        <a id="navLogin" class="nav-link" href="portfolio.html">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Concact</a>
+                        <a id="navContact"  class="nav-link" href="index.html">Concact</a>
                     </li>
                 </ul>
             </div>
@@ -46,18 +46,20 @@
         <div class="row">
             <section class="col-2 category">
                 <p>
-                    Brand
+                    <!-- Brand
                     <hr>
                     <button type="button" class="btn btn-light btn-sm">NIKE</button>
                     <button type="button" class="btn btn-light btn-sm">Adidas</button>
                     <button type="button" class="btn btn-light btn-sm">Vans</button>
-                    <button type="button" class="btn btn-light btn-sm">Converse</button>
+                    <button type="button" class="btn btn-light btn-sm">Converse</button> -->
                     <br><br>Style
                     <hr>
                     <button type="button" class="btn btn-light btn-sm">Run</button>
                     <button type="button" class="btn btn-light btn-sm">Tennis</button>
                     <button type="button" class="btn btn-light btn-sm">Sneaker</button>
                     <button type="button" class="btn btn-light btn-sm">Basketbal</button>
+                    <button type="button" class="btn btn-light btn-sm">Heels</button>
+                    <button type="button" class="btn btn-light btn-sm">Boots</button>
                     <br><br>Size
                     <hr>
                     <button type="button" class="btn btn-light btn-sm">7-</button>
@@ -81,12 +83,12 @@
 
             <main class="col-10 pictures">
                 <div class="row" id="show">
-                    <div class="card" style="width: 14rem;">
-                        <img class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
+                    <div id="shoeCard" class="card" style="width: 14rem;">
+                        <img id="cardImg"  class="card-img-top" src="./assets/img/logo.png" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Shoe name</h5>
-                            <p class="card-text">Price: 130$ </p>
-                            <a href="#" class="btn btn-primary btn-sm">Add to cart</a>
+                            <h5 id="cardName" class="card-title">Shoe name</h5>
+                            <p id="cardPrice" class="card-text">Price: 130$ </p>
+                            <a id="cardAdd"  href="#" class="btn btn-primary btn-sm">Add to cart</a>
                         </div>
                     </div>
 
