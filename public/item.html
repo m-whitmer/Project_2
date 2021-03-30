@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,55 +12,50 @@
 
     <title>Shoe-ing Online</title>
 </head>
+
 <body>
     <!-- Navbar goes here -->
     <nav class="navbar-expand-lg navbar navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png"alt="logo" width="60px" height="55px"> Shoe-ing 
-        </a>
-        <a class="nav-link text-light" href="home.html">Home</a>        <form class="form-inline my-2 my-lg-0 justify-content-center">
-          <input id="navInput"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button id="navSearch"  class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button id="navBtns" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./assets/img/logo1.png" alt="logo" width="60px" height="55px"> Shoe-ing
+            </a>
+            <a id="navHome" class="nav-link text-light" href="home.html">Home</a>
+            <form class="form-inline my-2 my-lg-0 justify-content-center">
+                <input id="navInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="navSearch" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button id="navBtns" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a id="navCart" class="nav-link" aria-current="page" href="cart.html">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a id="navLogin" class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a id="navContact" class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a id="navCart" class="nav-link" aria-current="page" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navLogin" class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navContact" class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <!--  main body -->
     <main class="container">
         <div class="row">
-            <div class="col-2" style="overflow: scroll; height: 450px;">
-                <img id="img1" src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
-                <img id="img2" src="./assets/img/cart.jpg" alt="placeholder" class="img-fluid img-thumbnail">
-                <img id="img3" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img id="img4" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img id="img5" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-                <img id="img6" src="./assets/img/cart.jpg" alt="placeholder" class="img-thumbnail">
-
-            </div>
             <div class="col-sm-6 col-xs-12">
                 <img id="imgLg" class="img-responsive img-fluid" src="./assets/img/cart.jpg" alt="itempic">
 
             </div>
             <div class="col3">
-                <h1 id="name" >Name of the product</h1>
-                <h6 id="stock" >Stock :</h6><hr>
+                <h1 id="name">Name of the product</h1>
+                <h6 id="stock">Stock :</h6>
+                <hr>
                 <!-- <h6>Color:</h6><hr> -->
-                <h6 id="size" >Size:</h6><hr>
+                <h6 id="size">Size:</h6>
+                <hr>
                 <button type="button" class="btn btn-light">7</button>
                 <button type="button" class="btn btn-light">8</button>
                 <button type="button" class="btn btn-light">9</button>
@@ -69,16 +65,17 @@
                 <button type="button" class="btn btn-light">13</button><br><br>
                 <button type="button" class="btn btn-light">14</button>
                 <button type="button" class="btn btn-light">15</button>
-                <button type="button" class="btn btn-light">16</button><hr>
-                <button type="button" class="btn btn-primary">Add to cart</button>
-            </div>   
-        </div><hr>
+                <button type="button" class="btn btn-light">16</button>
+                <hr>
+                <button type="button" class="btn btn-primary addBtn">Add to cart</button>
+            </div>
+        </div>
+        <hr>
         <p id="info">Description:</P>
-        <p id="detail">Details:</p>        
-        <p id="review">Review:</p>
     </main>
-    
-    
-            
+
+
+    <script src="/assets/js/item.js"></script>
 </body>
+
 </html>
