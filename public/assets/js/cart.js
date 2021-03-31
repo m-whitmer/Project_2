@@ -88,10 +88,12 @@ let loadCart = () => {
     axios.get('/api/carts')
         .then(res => {
             showCart(res.data.products);
+            getCartCount();
         })
         .catch(err => {
             console.log(err);
         })
+
 }
 
 let delShoe = id => {
@@ -123,6 +125,50 @@ let updateQuantity = (id, quantity) => {
     })
 }
 
+let changeCartCount = shoes => {
+    let cartTotal = 0;
+    for (let shoe of shoes) {
+        cartTotal += parseInt(shoe.cartItem.quantity);
+    }
+    $('#cartCount').text(cartTotal);
+}
+
+let getCartCount = () => {
+    axios.get('/api/carts')
+        .then(res => {
+            if (res.data) {
+                changeCartCount(res.data.products);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let logout = () => {
+    axios.post('/api/users/logout')
+        .then(res => {
+            $('#navLogin').text('Login').attr('href', '/login')
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let checkLogged = () => {
+    axios.get('/api/users/logged')
+        .then(res => {
+            if (res.data.logged_in) {
+                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+            } else {
+                location.href = "/login"
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
 $(document).ready(() => {
 
     $(document).on('click', '.delBtn', function() {
@@ -138,5 +184,11 @@ $(document).ready(() => {
         window.location.href = "/";
     })
 
+    $('#navCart').attr('href', '/cart');
+    $('.text-light').attr('href', '/');
+    $('#navLogin').attr('href', '/login');
+    $('#navContact').attr('href', '/contact');
+
+    checkLogged();
     loadCart();
 })

@@ -11,6 +11,52 @@ function addUser() {
         })
 }
 
+let changeCartCount = shoes => {
+    let cartTotal = 0;
+    for (let shoe of shoes) {
+        cartTotal += parseInt(shoe.cartItem.quantity);
+    }
+    $('#cartCount').text(cartTotal);
+}
+
+let getCartCount = () => {
+    axios.get('/api/carts')
+        .then(res => {
+            if (res.data) {
+                changeCartCount(res.data.products);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let checkLogged = () => {
+    axios.get('/api/users/logged')
+        .then(res => {
+            if (res.data.logged_in) {
+                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+            } else {
+                $('#navLogin').text('Login').attr('href', '/login')
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let logout = () => {
+    axios.post('/api/users/logout')
+        .then(res => {
+            $('#navLogin').text('Login').attr('href', '/login');
+            cartTotal = 0;
+            $('#cartCount').text(cartTotal);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
 $(document).ready(() => {
 
     $('#newUserForm').submit((e) => {
@@ -18,4 +64,12 @@ $(document).ready(() => {
         if ($('#name').val() === '' || $('#password').val() === '') return;
         addUser();
     })
+
+    $('#navCart').attr('href', '/cart');
+    $('.text-light').attr('href', '/');
+    $('#navLogin').attr('href', '/login');
+    $('#navContact').attr('href', '/contact');
+
+    checkLogged();
+    getCartCount();
 })
