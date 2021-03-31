@@ -7,7 +7,15 @@ router.post('/', async(req, res) => {
 
         await user.createCart();
 
-        res.status(200).json(user);
+        req.session.save(() => {
+            req.session.user = user;
+            req.session.user_id = user.id;
+            req.session.user_name = user.name;
+            req.session.logged_in = true;
+            req.session.message = undefined;
+
+            res.status(200).json({ logged_in: true });
+        });
 
     } catch (err) {
         console.log(err);
@@ -48,6 +56,24 @@ router.post('/login', async(req, res) => {
 
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get('/logged', async(req, res) => {
+    if (req.session.logged_in) {
+        res.status(200).json({ logged_in: true })
+    } else {
+        res.status(400).json({ logged_in: false })
+    }
+})
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
     }
 });
 
