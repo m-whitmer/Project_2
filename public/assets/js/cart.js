@@ -27,7 +27,7 @@ let renderButtons = () => {
     let shopData = $('<td>');
     let shopBtn = $('<td>').addClass('btn btn-primary shopBtn').text('Continue Shopping');
     let orderData = $('<td>');
-    let orderBtn = $('<td>').addClass('btn btn-success').text('Place order');
+    let orderBtn = $('<td>').addClass('btn btn-success orderBtn').text('Place order');
 
     shopData.append(shopBtn);
     orderData.append(orderBtn);
@@ -169,6 +169,15 @@ let checkLogged = () => {
         })
 }
 
+let makeOrder = () => {
+    axios.post('/api/orders').then(res => {
+        let orderTitle = $('<h3>').text('Order Placed!');
+        $('.container').append(orderTitle)
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
 $(document).ready(() => {
 
     $(document).on('click', '.delBtn', function() {
@@ -182,6 +191,10 @@ $(document).ready(() => {
 
     $(document).on('click', '.shopBtn', function() {
         window.location.href = "/";
+    })
+
+    $(document).on('click', '.orderBtn', function() {
+        makeOrder();
     })
 
     $('#navCart').attr('href', '/cart');
