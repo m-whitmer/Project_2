@@ -18,7 +18,11 @@
      margin: 15px;
  }
  .card-body {
-     padding-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+ }
+ #cardAdd {
+    margin-top: auto;
  }
  .badge {
      padding-left: 9px;
