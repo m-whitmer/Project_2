@@ -1,7 +1,7 @@
 let renderShoes = shoes => {
     for (let shoe of shoes) {
         let newCard = $('<div>').addClass('card').css('width', '14rem').attr('data-id', shoe.id);
-        let newIMG = $('<img>').addClass('card-img-top').attr('src', shoe.image_url);
+        let newIMG = $('<img>').addClass('card-img-top').attr('src', shoe.image_url).css('object-fit', 'cover').css('height', "200px").attr('data-id', shoe.id).css('cursor', 'pointer');
         let newCardInfo = $('<div>').addClass('card-body');
         let newCardTitle = $('<h5>').addClass('card-title').text(shoe.product_name);
         let newCardDesc = $('<p>').addClass('card-text').text(`price: $ ${shoe.price} stock: ${shoe.stock}`);
@@ -47,10 +47,55 @@ let addToCart = id => {
         quantity: 1
     }
     axios.post('/api/carts', newProd).then(res => {
+        getCartCount();
         console.log(res);
     }).catch(err => {
         console.log(err);
     })
+}
+
+let changeCartCount = shoes => {
+    let cartTotal = 0;
+    for (let shoe of shoes) {
+        cartTotal += parseInt(shoe.cartItem.quantity);
+    }
+    $('#cartCount').text(cartTotal);
+}
+
+let getCartCount = () => {
+    axios.get('/api/carts')
+        .then(res => {
+            if (res.data) {
+                changeCartCount(res.data.products);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let logout = () => {
+    axios.post('/api/users/logout')
+        .then(res => {
+            $('#navLogin').text('Login').attr('href', '/login')
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let checkLogged = () => {
+    axios.get('/api/users/logged')
+        .then(res => {
+            if (res.data.logged_in) {
+                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+            } else {
+                $('#navLogin').text('Login').attr('href', '/login')
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }
 
 $(document).ready(() => {
@@ -61,8 +106,9 @@ $(document).ready(() => {
         productSearch($(this).children().first().val());
     })
 
-    $(document).on('click', '.card', function() {
-        console.log($(this).attr('data-id'));
+    $(document).on('click', '.card-img-top', function() {
+        let id = $(this).attr('data-id');
+        location.href = `/item/${id}`
     })
 
     $(document).on('click', '.shoeBtn', function() {
@@ -70,5 +116,12 @@ $(document).ready(() => {
         addToCart(id);
     })
 
+    $('#navCart').attr('href', '/cart');
+    $('.text-light').attr('href', '/');
+    $('#navLogin').attr('href', '/login');
+    $('#navContact').attr('href', '/contact');
+
+    checkLogged();
+    getCartCount();
     getAllShoes();
 })

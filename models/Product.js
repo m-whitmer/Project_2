@@ -33,6 +33,14 @@ Product.init({
         type: DataTypes.TEXT,
         allowNull: true
     },
+    gender: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    material: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     image_url: {
         type: DataTypes.STRING,
         allowNull: true,
