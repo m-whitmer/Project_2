@@ -22,4 +22,8 @@ router.get('/signup', async(req, res) => {
     res.sendFile(path.join(__dirname, '../public/signup.html'));
 });
 
+router.get('/contact', async(req, res) => {
+    res.sendFile(path.join(__dirname, '../public/contact.html'));
+});
+
 module.exports = router;
