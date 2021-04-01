@@ -59,6 +59,38 @@ router.post('/search', async(req, res) => {
     }
 });
 
+router.get('/gender/:gender', async(req, res) => {
+    try {
+        let { gender } = req.params;
+        let result = await Product.findAll({
+            where: {
+                gender
+            }
+        })
+
+        res.status(200).json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    }
+});
+
+router.get('/material/:material', async(req, res) => {
+    try {
+        let { material } = req.params;
+        let result = await Product.findAll({
+            where: {
+                material
+            }
+        })
+
+        res.status(200).json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    }
+});
+
 router.delete('/:id', async(req, res) => {
     try {
         let { id } = req.params;
