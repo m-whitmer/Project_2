@@ -76,7 +76,9 @@ let getCartCount = () => {
 let logout = () => {
     axios.post('/api/users/logout')
         .then(res => {
-            $('#navLogin').text('Login').attr('href', '/login')
+            $('#navLogin').text('Login').attr('href', '/login');
+            cartTotal = 0;
+            $('#cartCount').text(cartTotal);
         })
         .catch(err => {
             console.log(err);
@@ -87,7 +89,7 @@ let checkLogged = () => {
     axios.get('/api/users/logged')
         .then(res => {
             if (res.data.logged_in) {
-                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+                $('#navLogin').text('Logout').removeAttr('href').css('cursor', 'pointer').click(logout);
             } else {
                 $('#navLogin').text('Login').attr('href', '/login')
             }
@@ -130,12 +132,38 @@ let getMaterial = material => {
         })
 }
 
+let getPrice = (min, max) => {
+    let data = {
+        min,
+        max
+    }
+    axios.post('/api/products/price', data)
+        .then(res => {
+            $('#show').empty();
+            renderShoes(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let checkSearch = () => {
+    let temp = window.location.toString().split('/');
+
+    if (temp[temp.length - 2] === "search") {
+        $('#navInput').val(temp[temp.length - 1])
+        productSearch(temp[temp.length - 1]);
+    } else {
+        getAllShoes();
+    }
+}
+
 $(document).ready(() => {
 
-    $('form').submit(function(e) {
+    $('#navForm').submit(function(e) {
         e.preventDefault();
 
-        productSearch($(this).children().first().val());
+        productSearch($('#navInput').val());
     })
 
     $(document).on('click', '.card-img-top', function() {
@@ -187,12 +215,20 @@ $(document).ready(() => {
         getMaterial("PU");
     })
 
-    $('#navCart').attr('href', '/cart');
-    $('.text-light').attr('href', '/');
-    $('#navLogin').attr('href', '/login');
-    $('#navContact').attr('href', '/contact');
+    $('#p25').click(() => {
+        getPrice(0, 25);
+    })
+    $('#p2550').click(() => {
+        getPrice(25, 50);
+    })
+    $('#p5075').click(() => {
+        getPrice(50, 75);
+    })
+    $('#p75').click(() => {
+        getPrice(75, 120);
+    })
 
     checkLogged();
     getCartCount();
-    getAllShoes();
+    checkSearch()
 })

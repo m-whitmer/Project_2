@@ -11,8 +11,28 @@ const productData = [{
         description: 'Simply tennis'
     },
     {
+        product_name: "Super Spikey Stilletos",
+        price: 89.99,
+        stock: 22,
+        category_id: 5,
+        gender: 'F',
+        material: "PU",
+        image_url: 'https://images-na.ssl-images-amazon.com/images/I/61hdZwiWQeL._AC_UL1200_.jpg',
+        description: 'Also a weapon'
+    },
+    {
+        product_name: 'Work Boots',
+        price: 87.99,
+        stock: 14,
+        category_id: 6,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://images.timberland.com/is/image/timberland/10361024-HERO?wid=500&hei=500',
+        description: 'For relaxing'
+    },
+    {
         product_name: 'Everyday Sneakers',
-        price: 35.99,
+        price: 15.99,
         stock: 25,
         category_id: 2,
         gender: 'K',
@@ -31,6 +51,26 @@ const productData = [{
         description: 'Glamorous Cardio'
     },
     {
+        product_name: "Graffiti Basketball Shoes",
+        price: 55.99,
+        stock: 27,
+        category_id: 4,
+        gender: 'K',
+        material: "C",
+        image_url: 'https://publish.one37pm.net/wp-content/uploads/2020/10/nike-basketball-mobile.jpg',
+        description: "Banksy's newest masterpiece"
+    },
+    {
+        product_name: "Pink Tennis Shoes",
+        price: 44.99,
+        stock: 12,
+        category_id: 1,
+        gender: 'F',
+        material: "PU",
+        image_url: 'https://rogansshoes.com/data/default/images/catalog/385/AD_CG6363_PNK1.JPG',
+        description: 'Pretty in Pink'
+    },
+    {
         product_name: "Jordan Michael's Shoes for the Ground",
         price: 72.99,
         stock: 50,
@@ -39,16 +79,6 @@ const productData = [{
         material: "C",
         image_url: 'https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Dior/Images/Air-Jordan-1-Retro-High-Dior/Lv2/img02.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1607043976',
         description: 'No jumping'
-    },
-    {
-        product_name: "Super Spikey Stilletos",
-        price: 89.99,
-        stock: 22,
-        category_id: 5,
-        gender: 'F',
-        material: "PU",
-        image_url: 'https://images-na.ssl-images-amazon.com/images/I/61hdZwiWQeL._AC_UL1200_.jpg',
-        description: 'Also a weapon'
     },
     {
         product_name: "Ughs",
@@ -91,16 +121,6 @@ const productData = [{
         description: "The 90's called..."
     },
     {
-        product_name: "Pink Tennis Shoes",
-        price: 44.99,
-        stock: 12,
-        category_id: 1,
-        gender: 'F',
-        material: "PU",
-        image_url: 'https://rogansshoes.com/data/default/images/catalog/385/AD_CG6363_PNK1.JPG',
-        description: 'Pretty in Pink'
-    },
-    {
         product_name: "Former Cows",
         price: 56.99,
         stock: 56,
@@ -131,19 +151,9 @@ const productData = [{
         description: 'I see Red'
     },
     {
-        product_name: "Graffiti Basketball Shoes",
-        price: 55.99,
-        stock: 30,
-        category_id: 4,
-        gender: 'K',
-        material: "C",
-        image_url: 'https://publish.one37pm.net/wp-content/uploads/2020/10/nike-basketball-mobile.jpg',
-        description: "Banksy's newest masterpiece"
-    },
-    {
         product_name: "Butterfly Heels",
         price: 69.99,
-        stock: 30,
+        stock: 15,
         category_id: 5,
         gender: 'F',
         material: "L",
@@ -153,7 +163,7 @@ const productData = [{
     {
         product_name: "Twisty Heels",
         price: 79.99,
-        stock: 30,
+        stock: 16,
         category_id: 5,
         gender: 'F',
         material: "C",
@@ -163,7 +173,7 @@ const productData = [{
     {
         product_name: "Big Black Boots",
         price: 75.99,
-        stock: 30,
+        stock: 23,
         category_id: 6,
         gender: 'F',
         material: "L",
@@ -173,13 +183,183 @@ const productData = [{
     {
         product_name: "America! The Boots",
         price: 89.99,
-        stock: 30,
+        stock: 16,
         category_id: 6,
         gender: 'M',
         material: "L",
         image_url: 'https://www.sheplers.com/dw/image/v2/BBCT_PRD/on/demandware.static/-/Sites-master-product-catalog-shp/default/dwcc02bbfa/images/782/038782_41_LT.JPG?sw=980&sh=980&sm=fit',
         description: "Don't tread on these"
     },
+    {
+        product_name: 'Toxic Tennis Shoes',
+        price: 32.99,
+        stock: 14,
+        category_id: 1,
+        gender: 'M',
+        material: "C",
+        image_url: 'https://cdn.hydrogen.filoblu.com/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/T/0/T03014-724-3-35_1.JPG',
+        description: 'Probably disqualifying'
+    },
+    {
+        product_name: 'Sneaker of sneakers',
+        price: 12.99,
+        stock: 32,
+        category_id: 2,
+        gender: 'M',
+        material: "PU",
+        image_url: 'https://static.businessworld.in/article/article_extra_large_image/1560859917_Yqz5H0_sneaker2_470.jpg',
+        description: 'Sneakerception'
+    },
+    {
+        product_name: 'Running Slippers',
+        price: 11.99,
+        stock: 14,
+        category_id: 3,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://images-na.ssl-images-amazon.com/images/I/81jod22O1IL._UL1500_.jpg',
+        description: 'For night runs'
+    },
+    {
+        product_name: 'Cosmic Ball Shoes',
+        price: 33.99,
+        stock: 26,
+        category_id: 4,
+        gender: 'K',
+        material: "C",
+        image_url: 'https://cdn.trendhunterstatic.com/thumbs/air-jordan-xxx.jpeg',
+        description: 'Out of this world'
+    },
+    {
+        product_name: 'Actually Spiked Heels',
+        price: 75.99,
+        stock: 19,
+        category_id: 5,
+        gender: 'F',
+        material: "PU",
+        image_url: 'https://images.rivithead.com/products/zoom-images/voltage-08.jpg',
+        description: 'Fashion AND Function'
+    },
+    {
+        product_name: 'Alligator Boots',
+        price: 55.99,
+        stock: 34,
+        category_id: 6,
+        gender: 'K',
+        material: "L",
+        image_url: 'https://i.pinimg.com/originals/c3/0a/60/c30a60e3248331ad07c7d4768cb0951e.jpg',
+        description: 'With toes that bite and claws that catch!'
+    },
+    {
+        product_name: 'Clogdles',
+        price: 23.99,
+        stock: 22,
+        category_id: 5,
+        gender: 'M',
+        material: "C",
+        image_url: 'https://www.lottafromstockholm.co.uk/media/catalog/product/cache/db398706752b3f2345d463df10b04398/h/i/highwood_tan_6.jpg',
+        description: 'Clogs for the Beach'
+    },
+    {
+        product_name: 'Elf Boots',
+        price: 7.99,
+        stock: 33,
+        category_id: 2,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://img.wondercostumes.com/imgzoom/red-and-green-34399.jpg',
+        description: 'Get into the Christmas Spirit!'
+    },
+    {
+        product_name: 'Bouncy Bouncy',
+        price: 57.99,
+        stock: 14,
+        category_id: 1,
+        gender: 'M',
+        material: "L",
+        image_url: 'http://sneakernews.com/wp-content/uploads/2013/01/reebok-atv-19-3.jpg',
+        description: 'Bounce to another dimension'
+    },
+    {
+        product_name: 'My Running Shoes',
+        price: 16.99,
+        stock: 34,
+        category_id: 3,
+        gender: 'K',
+        material: "PU",
+        image_url: 'https://i.pinimg.com/originals/34/81/47/3481477d3a40fc83108901e80384f4b4.jpg',
+        description: 'Your running shoes'
+    },
+    {
+        product_name: 'Flamewalkers',
+        price: 44.99,
+        stock: 41,
+        category_id: 4,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://netdna.coolthings.com/wp-content/uploads/2011/02/adidasflames1-360x240.jpg',
+        description: "You're on fire!"
+    },
+    {
+        product_name: 'A Pair of Gloves',
+        price: 9.99,
+        stock: 64,
+        category_id: 2,
+        gender: 'M',
+        material: "C",
+        image_url: 'http://cdn.shopify.com/s/files/1/0004/4652/9572/products/zpacks-ultralight-possumdown-gloves_1200x1200.jpg?v=1575921409',
+        description: 'Shoes for your hands'
+    },
+    {
+        product_name: 'X-Treme BBall Duds',
+        price: 87.99,
+        stock: 14,
+        category_id: 4,
+        gender: 'F',
+        material: "L",
+        image_url: 'https://www.dmarge.com/wp-content/uploads/2020/10/SCAROSSO-Dress-Shoes.jpg',
+        description: 'Take it to the next level'
+    },
+    {
+        product_name: 'Hand Heels',
+        price: 84.99,
+        stock: 44,
+        category_id: 5,
+        gender: 'M',
+        material: "PU",
+        image_url: 'https://i.pinimg.com/736x/74/09/de/7409deab53b84a15587e163e0ca04551.jpg',
+        description: "These Shoes are Heels over Hands for you!"
+    },
+    {
+        product_name: 'DJ Tennis Pro',
+        price: 97.99,
+        stock: 24,
+        category_id: 1,
+        gender: 'K',
+        material: "C",
+        image_url: 'https://ikeeneye.files.wordpress.com/2006/11/gansta3.jpg',
+        description: 'Rock out on the court!'
+    },
+    {
+        product_name: 'Spongebob Foot',
+        price: 4.99,
+        stock: 64,
+        category_id: 3,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://images-na.ssl-images-amazon.com/images/I/61IHRf-jPgL._AC_UL1250_.jpg',
+        description: 'For underwater races'
+    },
+    {
+        product_name: 'Banana Peel',
+        price: 87.99,
+        stock: 14,
+        category_id: 6,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://awesomestuff365.com/wp-content/uploads/2018/06/Banana-Shoes-.jpg',
+        description: 'Slip into comfort'
+    }
 
 ];
 
