@@ -12,7 +12,7 @@ const productData = [{
     },
     {
         product_name: 'Everyday Sneakers',
-        price: 35.99,
+        price: 15.99,
         stock: 25,
         category_id: 2,
         gender: 'K',
@@ -133,7 +133,7 @@ const productData = [{
     {
         product_name: "Graffiti Basketball Shoes",
         price: 55.99,
-        stock: 30,
+        stock: 27,
         category_id: 4,
         gender: 'K',
         material: "C",
@@ -143,7 +143,7 @@ const productData = [{
     {
         product_name: "Butterfly Heels",
         price: 69.99,
-        stock: 30,
+        stock: 15,
         category_id: 5,
         gender: 'F',
         material: "L",
@@ -153,7 +153,7 @@ const productData = [{
     {
         product_name: "Twisty Heels",
         price: 79.99,
-        stock: 30,
+        stock: 16,
         category_id: 5,
         gender: 'F',
         material: "C",
@@ -163,7 +163,7 @@ const productData = [{
     {
         product_name: "Big Black Boots",
         price: 75.99,
-        stock: 30,
+        stock: 23,
         category_id: 6,
         gender: 'F',
         material: "L",
@@ -173,13 +173,73 @@ const productData = [{
     {
         product_name: "America! The Boots",
         price: 89.99,
-        stock: 30,
+        stock: 16,
         category_id: 6,
         gender: 'M',
         material: "L",
         image_url: 'https://www.sheplers.com/dw/image/v2/BBCT_PRD/on/demandware.static/-/Sites-master-product-catalog-shp/default/dwcc02bbfa/images/782/038782_41_LT.JPG?sw=980&sh=980&sm=fit',
         description: "Don't tread on these"
     },
+    {
+        product_name: 'Toxic Tennis Shoes',
+        price: 32.99,
+        stock: 14,
+        category_id: 1,
+        gender: 'M',
+        material: "C",
+        image_url: 'https://cdn.hydrogen.filoblu.com/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/T/0/T03014-724-3-35_1.JPG',
+        description: 'Probably disqualifying'
+    },
+    {
+        product_name: 'Sneaker of sneakers',
+        price: 12.99,
+        stock: 32,
+        category_id: 2,
+        gender: 'M',
+        material: "PU",
+        image_url: 'https://static.businessworld.in/article/article_extra_large_image/1560859917_Yqz5H0_sneaker2_470.jpg',
+        description: 'Sneakerception'
+    },
+    {
+        product_name: 'Running Slippers',
+        price: 11.99,
+        stock: 14,
+        category_id: 3,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://images-na.ssl-images-amazon.com/images/I/81jod22O1IL._UL1500_.jpg',
+        description: 'For night runs'
+    },
+    {
+        product_name: 'Cosmic Ball Shoes',
+        price: 33.99,
+        stock: 26,
+        category_id: 4,
+        gender: 'K',
+        material: "C",
+        image_url: 'https://cdn.trendhunterstatic.com/thumbs/air-jordan-xxx.jpeg',
+        description: 'Out of this world'
+    },
+    {
+        product_name: 'Actually Spiked Heels',
+        price: 75.99,
+        stock: 19,
+        category_id: 5,
+        gender: 'F',
+        material: "PU",
+        image_url: 'https://images.rivithead.com/products/zoom-images/voltage-08.jpg',
+        description: 'Fashion AND Function'
+    },
+    {
+        product_name: 'Work Boots',
+        price: 87.99,
+        stock: 14,
+        category_id: 6,
+        gender: 'M',
+        material: "L",
+        image_url: 'https://images.timberland.com/is/image/timberland/10361024-HERO?wid=500&hei=500',
+        description: 'For relaxing'
+    }
 
 ];
 

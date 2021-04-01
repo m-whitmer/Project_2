@@ -91,6 +91,24 @@ router.get('/material/:material', async(req, res) => {
     }
 });
 
+router.post('/price/', async(req, res) => {
+    try {
+        let { min, max } = req.body;
+        let result = await Product.findAll({
+            where: {
+                price: {
+                    [Op.between]: [min, max]
+                }
+            }
+        })
+
+        res.status(200).json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+    }
+});
+
 router.delete('/:id', async(req, res) => {
     try {
         let { id } = req.params;
