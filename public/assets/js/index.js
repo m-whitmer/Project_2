@@ -48,7 +48,6 @@ let addToCart = id => {
     }
     axios.post('/api/carts', newProd).then(res => {
         getCartCount();
-        console.log(res);
     }).catch(err => {
         console.log(err);
     })
@@ -98,6 +97,39 @@ let checkLogged = () => {
         })
 }
 
+let getCategory = cat => {
+    axios.get(`/api/categories/${cat}`)
+        .then(res => {
+            $('#show').empty();
+            renderShoes(res.data.products);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let getGender = gender => {
+    axios.get(`/api/products/gender/${gender}`)
+        .then(res => {
+            $('#show').empty();
+            renderShoes(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+let getMaterial = material => {
+    axios.get(`/api/products/material/${material}`)
+        .then(res => {
+            $('#show').empty();
+            renderShoes(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
 $(document).ready(() => {
 
     $('form').submit(function(e) {
@@ -114,6 +146,45 @@ $(document).ready(() => {
     $(document).on('click', '.shoeBtn', function() {
         let id = $(this).attr('data-id')
         addToCart(id);
+    })
+
+    $('#run').click(() => {
+        getCategory(3);
+    })
+    $('#tennis').click(() => {
+        getCategory(1);
+    })
+    $('#sneaker').click(() => {
+        getCategory(2);
+    })
+    $('#basketball').click(() => {
+        getCategory(4);
+    })
+    $('#heels').click(() => {
+        getCategory(5);
+    })
+    $('#boots').click(() => {
+        getCategory(6);
+    })
+
+    $('#men').click(() => {
+        getGender("M");
+    })
+    $('#women').click(() => {
+        getGender("F");
+    })
+    $('#kids').click(() => {
+        getGender("K");
+    })
+
+    $('#leather').click(() => {
+        getMaterial("L");
+    })
+    $('#cloth').click(() => {
+        getMaterial("C");
+    })
+    $('#pu').click(() => {
+        getMaterial("PU");
     })
 
     $('#navCart').attr('href', '/cart');
