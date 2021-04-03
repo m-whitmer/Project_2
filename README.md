@@ -78,9 +78,9 @@ This project fulfills the following requirements:
 * Contact: zst9394@outlook.com
 
 ### Ethan  
-* Github: https://github.com/???   
-* Contact: ????
+* Github: https://github.com/edutcher   
+* Contact: edutcher@gmail.com
 
 ### Michael 
-* Github:  https://github.com/???
+* Github:  https://github.com/m-whitmer/
 * Contact: ????
