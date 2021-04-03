@@ -4,7 +4,7 @@
 ## Team: Super Group
 
 
-![Home Page](./public/assets/img/Homepage.png)
+![Home Page](./public/assets/img/shoeing.png)
 
 ## Project Overview
 
@@ -83,4 +83,4 @@ This project fulfills the following requirements:
 
 ### Michael 
 * Github:  https://github.com/m-whitmer/
-* Contact: ????
+* Contact: whitmer81@gmail.com
