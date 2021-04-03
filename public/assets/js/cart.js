@@ -24,15 +24,15 @@ let renderButtons = () => {
     let emptyData1 = $('<td>');
     let emptyData2 = $('<td>');
     let emptyData3 = $('<td>');
-    let shopData = $('<td>');
-    let shopBtn = $('<td>').addClass('btn btn-primary shopBtn').text('Continue Shopping');
+    let prevData = $('<td>');
+    let prevBtn = $('<td>').addClass('btn btn-primary prevBtn').text('Previous Orders');
     let orderData = $('<td>');
     let orderBtn = $('<td>').addClass('btn btn-success orderBtn').text('Place order');
 
-    shopData.append(shopBtn);
+    prevData.append(prevBtn);
     orderData.append(orderBtn);
 
-    newRow.append(emptyData1, emptyData2, emptyData3, shopData, orderData);
+    newRow.append(emptyData1, prevData, emptyData2, emptyData3, orderData);
 
     $('tbody').append(newRow);
 }
@@ -148,7 +148,10 @@ let getCartCount = () => {
 let logout = () => {
     axios.post('/api/users/logout')
         .then(res => {
-            $('#navLogin').text('Login').attr('href', '/login')
+            $('#navLogin').text('Login').attr('href', '/login');
+            cartTotal = 0;
+            $('#cartCount').text(cartTotal);
+            location.href = "/";
         })
         .catch(err => {
             console.log(err);
@@ -159,7 +162,7 @@ let checkLogged = () => {
     axios.get('/api/users/logged')
         .then(res => {
             if (res.data.logged_in) {
-                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+                $('#navLogin').text('Logout').removeAttr('href').css('cursor', 'pointer').click(logout);
             } else {
                 location.href = "/login"
             }
@@ -169,9 +172,55 @@ let checkLogged = () => {
         })
 }
 
+
+let backCart = () => {
+    $('#prevOrders').remove();
+    $('.col-12').css('display', 'inline');
+}
+
+let displayOrders = (orders) => {
+    $('.col-12').css('display', 'none');
+    let newDiv = $('<div>').attr('id', 'prevOrders');
+
+    for (let order of orders) {
+        let newCard = $('<div>').addClass('card').css('margin', '15px');
+        let newTitle = $('<h5>').addClass('card-title').text(`Order #${order.id}`);
+        let items = 0;
+        let total = 0;
+        for (let product of order.products) {
+            items += product.orderItem.quantity;
+            total += product.price * product.orderItem.quantity;
+        }
+        let newSub = $('<h4>').addClass('card-subtitle').text(`Items: ${items}`);
+        let newBody = $('<div>').addClass('card-body').text(`Total: ${total}`);
+        newCard.append(newTitle, newSub, newBody);
+        newDiv.append(newCard);
+    }
+
+    let newBtn = $('<button>').addClass('btn btn-primary').text('Back to Cart').click(backCart);
+
+    newDiv.append(newBtn);
+
+    $('.row').append(newDiv);
+}
+
+
+let getOrders = () => {
+    axios.get('/api/orders')
+        .then(res => {
+            console.log(res);
+            displayOrders(res.data)
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
 let makeOrder = () => {
     axios.post('/api/orders').then(res => {
-        let orderTitle = $('<h3>').text('Order Placed!');
+        $('tbody').empty();
+        $('#cartCount').text(0);
+        let orderTitle = $('<h3>').text(`Order Placed! Your Order number is : ${res.data.id}`);
         $('.container').append(orderTitle)
     }).catch(err => {
         console.log(err);
@@ -189,18 +238,24 @@ $(document).ready(() => {
     })
 
 
-    $(document).on('click', '.shopBtn', function() {
-        window.location.href = "/";
+    $(document).on('click', '.prevBtn', function() {
+        getOrders();
     })
 
     $(document).on('click', '.orderBtn', function() {
         makeOrder();
     })
 
-    $('#navCart').attr('href', '/cart');
-    $('.text-light').attr('href', '/');
-    $('#navLogin').attr('href', '/login');
-    $('#navContact').attr('href', '/contact');
+
+    $('#navForm').submit(function(e) {
+        e.preventDefault();
+
+        if ($('#navInput').val() != '') {
+            let search = $('#navInput').val();
+
+            location.href = `/search/${search}`
+        }
+    })
 
     checkLogged();
     loadCart();

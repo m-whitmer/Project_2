@@ -36,6 +36,8 @@ let logout = () => {
     axios.post('/api/users/logout')
         .then(res => {
             $('#navLogin').text('Login').attr('href', '/login')
+            cartTotal = 0;
+            $('#cartCount').text(cartTotal);
         })
         .catch(err => {
             console.log(err);
@@ -46,7 +48,7 @@ let checkLogged = () => {
     axios.get('/api/users/logged')
         .then(res => {
             if (res.data.logged_in) {
-                $('#navLogin').text('Logout').removeAttr('href').click(logout);
+                $('#navLogin').text('Logout').removeAttr('href').css('cursor', 'pointer').click(logout);
             } else {
                 $('#navLogin').text('Login').attr('href', '/login')
             }
@@ -64,11 +66,15 @@ $(document).ready(() => {
         login();
     })
 
+    $('#navForm').submit(function(e) {
+        e.preventDefault();
 
-    $('#navCart').attr('href', '/cart');
-    $('.text-light').attr('href', '/');
-    $('#navLogin').attr('href', '/login');
-    $('#navContact').attr('href', '/contact');
+        if ($('#navInput').val() != '') {
+            let search = $('#navInput').val();
+
+            location.href = `/search/${search}`
+        }
+    })
 
     checkLogged();
     getCartCount();
